@@ -11,6 +11,7 @@ function Control() {
   const buttons = [
     {
       label: "Lettuce",
+      disabled: lettuce === 0,
       onLess() {
         if (lettuce > 0) setLettuce(lettuce - 0.5);
       },
@@ -20,6 +21,7 @@ function Control() {
     },
     {
       label: "Bacon",
+      disabled: bacon === 0,
       onLess() {
         if (bacon > 0) setBacon(bacon - 0.7);
       },
@@ -29,6 +31,7 @@ function Control() {
     },
     {
       label: "Cheese",
+      disabled: cheese === 0,
       onLess() {
         if (cheese > 0) setCheese(cheese - 0.4);
       },
@@ -38,6 +41,7 @@ function Control() {
     },
     {
       label: "Meat",
+      disabled: meat === 0,
       onLess() {
         if (meat > 0) setMeat(meat - 1.3);
       },
@@ -51,18 +55,20 @@ function Control() {
       label={ing.label}
       onLess={ing.onLess}
       onMore={ing.onMore}
+      isDisabled={ing.disabled}
     />
   ));
 
   return (
     <div className="container-fluid bg-controls p-0 m-0">
       <p className="text-center">
-        Current Price:${lettuce + meat + cheese + bacon}
+        Current Price:
+        <strong>${lettuce + meat + cheese + bacon}</strong>
       </p>
       {ingredients}
-      <div className="row m-0 justify-content-center">
-        <div className="col-2"></div>
-        <button className="btn-order">SIGN UP TO ORDER</button>
+      <div className="row m-0">
+        <div className="col-4"></div>
+        <button className="btn-order">ORDER</button>
       </div>
     </div>
   );

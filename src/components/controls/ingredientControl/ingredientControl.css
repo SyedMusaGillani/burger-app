@@ -1,0 +1,17 @@
+.btn-more{
+  background-color: #8f5e1e;
+  border: 1px solid #aa6817;
+  color: white;
+}
+
+.btn-less{
+  background-color: #D39952;
+  border: 1px solid #7E7365;
+  color: white;
+}
+
+.btn-less:disabled {
+  background-color: #AC9980;
+  color: #ccc;
+  cursor: default;
+}
