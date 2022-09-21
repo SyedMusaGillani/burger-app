@@ -1,0 +1,16 @@
+.bg-controls{
+  background-color: #CF8F2E;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.btn-order{
+  background-color: #DAD735;
+  width: 40%;
+}
+
+.outline{
+  border: 3px dotted blue;
+}
