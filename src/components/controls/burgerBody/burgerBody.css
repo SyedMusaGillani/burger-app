@@ -1,0 +1,16 @@
+.outline {
+  border: 3px dotted blue;
+}
+
+.img-size{
+  max-height: 40%;
+  max-width: 40%;
+}
+
+.width-hundred{
+  width: 100%;
+}
+
+.overflow{
+  overflow: auto;
+}

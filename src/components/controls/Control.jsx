@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./control.css";
 import IngredientControl from "./ingredientControl";
+import BurgerBody from "./burgerBody";
 
 function Control() {
   const [lettuce, setLettuce] = useState(0);
@@ -50,27 +51,36 @@ function Control() {
       },
     },
   ];
-  const ingredients = buttons.map((ing) => (
+  const ingredients = buttons.map((ing, i) => (
     <IngredientControl
       label={ing.label}
       onLess={ing.onLess}
       onMore={ing.onMore}
       isDisabled={ing.disabled}
+      key={i}
     />
   ));
 
   return (
-    <div className="container-fluid bg-controls p-0 m-0">
-      <p className="text-center">
-        Current Price:
-        <strong>${lettuce + meat + cheese + bacon}</strong>
-      </p>
-      {ingredients}
-      <div className="row m-0">
-        <div className="col-4"></div>
-        <button className="btn-order">ORDER</button>
+    <>
+      <BurgerBody
+        lettuce={lettuce}
+        meat={meat}
+        cheese={cheese}
+        bacon={bacon}
+      ></BurgerBody>
+      <div className="container-fluid bg-controls p-0 m-0">
+        <p className="text-center">
+          Current Price:
+          <strong>${lettuce + meat + cheese + bacon}</strong>
+        </p>
+        {ingredients}
+        <div className="row m-0">
+          <div className="col-4"></div>
+          <button className="btn-order">ORDER</button>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
