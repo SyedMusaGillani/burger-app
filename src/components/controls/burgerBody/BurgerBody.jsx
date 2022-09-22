@@ -1,11 +1,14 @@
 import _ from "lodash";
 
-import top from "../../../assets/top.jpeg";
-import bottom from "../../../assets/bottom.jpeg";
-import cheeseImg from "../../../assets/cheese.jpeg";
-import baconImg from "../../../assets/bacon.jpeg";
-import meatImg from "../../../assets/meat.jpeg";
-import lettuceImg from "../../../assets/lettuce.jpeg";
+import {
+  top,
+  bottom,
+  cheeseImg,
+  baconImg,
+  meatImg,
+  lettuceImg,
+} from "../../../assets";
+
 import "./burgerBody.css";
 
 export default function BurgerBody({ lettuce, meat, cheese, bacon }) {

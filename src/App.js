@@ -1,12 +1,15 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Nav } from './components/nav'
-import { Controls } from './components/controls'
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import { Nav } from "./components";
+import { Controls } from "./components";
+
+import "./App.css";
+
 function App() {
   return (
     <>
-      <Nav></Nav>
-      <Controls></Controls>
+      <Nav />
+      <Controls />
     </>
   );
 }

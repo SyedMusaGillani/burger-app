@@ -1,7 +1,9 @@
 import { useState } from "react";
+
+import { IngredientControl } from "../../components";
+import { BurgerBody } from "../../components";
+
 import "./control.css";
-import IngredientControl from "./ingredientControl";
-import BurgerBody from "./burgerBody";
 
 function Control() {
   const [lettuce, setLettuce] = useState(0);
@@ -63,22 +65,13 @@ function Control() {
 
   return (
     <>
-      <BurgerBody
-        lettuce={lettuce}
-        meat={meat}
-        cheese={cheese}
-        bacon={bacon}
-      ></BurgerBody>
-      <div className="container-fluid bg-controls p-0 m-0">
-        <p className="text-center">
-          Current Price:
-          <strong>${lettuce + meat + cheese + bacon}</strong>
-        </p>
+      <BurgerBody lettuce={lettuce} meat={meat} cheese={cheese} bacon={bacon} />
+      <div className="container-fluid bg-controls p-0 m-2 text-center">
+        Current Price:
+        <strong>${lettuce + meat + cheese + bacon}</strong>
         {ingredients}
-        <div className="row m-0">
-          <div className="col-4"></div>
-          <button className="btn-order">ORDER</button>
-        </div>
+        <br />
+        <button className="justify-content-center btn-order">ORDER</button>
       </div>
     </>
   );
