@@ -1,7 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { Nav } from "./components";
-import { Controls } from "./components";
+import { Nav, Controls } from "./components";
 
 import "./App.css";
 

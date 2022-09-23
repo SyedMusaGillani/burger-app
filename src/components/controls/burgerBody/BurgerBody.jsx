@@ -2,24 +2,14 @@ import _ from "lodash";
 
 import {
   top,
-  bottom,
-  cheeseImg,
-  baconImg,
-  meatImg,
-  lettuceImg,
+  bottom
 } from "../../../assets";
-import { foodItemsRate } from "../../helpers/helper";
+
+import { foodItemsRate, itemImages } from "../../helpers/helper";
 
 import "./burgerBody.css";
 
 export default function BurgerBody(props) {
-  const itemImages = [
-    { lettuce: lettuceImg },
-    { bacon: baconImg },
-    { cheese: cheeseImg },
-    { meat: meatImg },
-  ];
-
   return (
     <div className="container-fluid my-2 overflow">
       <div className="row width-hundred justify-content-center ">

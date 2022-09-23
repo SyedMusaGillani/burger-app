@@ -1,3 +1,10 @@
+import {
+  cheeseImg,
+  baconImg,
+  meatImg,
+  lettuceImg,
+} from "../../assets";
+
 export const foodItemsRate = {
   lettuce: 0.5,
   bacon: 0.7,
@@ -5,12 +12,13 @@ export const foodItemsRate = {
   meat: 1.3,
 };
 
-/**
- *
- * @param {price rate of foodItem} priceRate
- * @param {foodPrice stored in state} foodPrice
- * @param {function to updat foodPrice in state} setFoodPrice
- */
+export const itemImages = [
+  { lettuce: lettuceImg },
+  { bacon: baconImg },
+  { cheese: cheeseImg },
+  { meat: meatImg },
+];
+
 export const reducePrice = (label, priceRate, foodPrice, setFoodPrice) => {
   if (foodPrice[label] > 0)
     setFoodPrice((prevState) => {
