@@ -25,14 +25,18 @@ export default function BurgerBody(props) {
       <div className="row width-hundred justify-content-center ">
         <img className="img-size" src={top} alt="top bun" />
       </div>
-      {itemImages.map((obj) => {
-        const [key, val] = Object.entries(obj)[0];
-        return _.times(props[key] / foodItemsRate[key], () => (
-          <div className="row width-hundred justify-content-center ">
-            <img className="img-size" src={val} alt="ing" />
-          </div>
-        ));
-      })}
+      {props.price === 3 ? (
+        <h1 className="text-center">No Ingrdients Added</h1>
+      ) : (
+        itemImages.map((obj) => {
+          const [key, val] = Object.entries(obj)[0];
+          return _.times(props[key] / foodItemsRate[key], () => (
+            <div className="row width-hundred justify-content-center ">
+              <img className="img-size" src={val} alt="ing" />
+            </div>
+          ));
+        })
+      )}
       <div className="row width-hundred justify-content-center ">
         <img className="img-size" src={bottom} alt="bottom bun" />
       </div>

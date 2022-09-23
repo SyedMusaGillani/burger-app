@@ -22,14 +22,14 @@ function Control() {
     />
   ));
 
+  const price = Object.values(foodPrice).reduce((prev, curr) => prev + curr, 3);
+
   return (
     <>
-      <BurgerBody {...foodPrice} />
+      <BurgerBody {...foodPrice} price={price} />
       <div className="container-fluid bg-controls p-0 m-0 text-center">
         Current Price:
-        <strong>
-          ${Object.values(foodPrice).reduce((prev, curr) => prev + curr, 0)}
-        </strong>
+        <strong>${price}</strong>
         {ingredients}
         <br />
         <button className="justify-content-center btn-order">ORDER</button>
