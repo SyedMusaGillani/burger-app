@@ -25,7 +25,7 @@ function Control() {
   return (
     <>
       <BurgerBody {...foodPrice} />
-      <div className="container-fluid bg-controls p-0 m-2 text-center">
+      <div className="container-fluid bg-controls p-0 m-0 text-center">
         Current Price:
         <strong>
           ${Object.values(foodPrice).reduce((prev, curr) => prev + curr, 0)}
