@@ -8,35 +8,31 @@ import {
   meatImg,
   lettuceImg,
 } from "../../../assets";
+import { foodItemsRate } from "../../helpers/helper";
 
 import "./burgerBody.css";
 
-export default function BurgerBody({ lettuce, meat, cheese, bacon }) {
+export default function BurgerBody(props) {
+  const itemImages = [
+    { lettuce: lettuceImg },
+    { bacon: baconImg },
+    { cheese: cheeseImg },
+    { meat: meatImg },
+  ];
+
   return (
     <div className="container-fluid my-2 overflow">
       <div className="row width-hundred justify-content-center ">
         <img className="img-size" src={top} alt="top bun" />
       </div>
-      {_.times(lettuce / 0.5, () => (
-        <div className="row width-hundred justify-content-center ">
-          <img className="img-size" src={lettuceImg} alt="ing" />
-        </div>
-      ))}
-      {_.times(bacon / 0.7, () => (
-        <div className="row width-hundred justify-content-center ">
-          <img className="img-size" src={baconImg} alt="ing" />
-        </div>
-      ))}
-      {_.times(cheese / 0.4, () => (
-        <div className="row width-hundred justify-content-center ">
-          <img className="img-size" src={cheeseImg} alt="ing" />
-        </div>
-      ))}
-      {_.times(meat / 1.3, () => (
-        <div className="row width-hundred justify-content-center ">
-          <img className="img-size" src={meatImg} alt="ing" />
-        </div>
-      ))}
+      {itemImages.map((obj) => {
+        const [key, val] = Object.entries(obj)[0];
+        return _.times(props[key] / foodItemsRate[key], () => (
+          <div className="row width-hundred justify-content-center ">
+            <img className="img-size" src={val} alt="ing" />
+          </div>
+        ));
+      })}
       <div className="row width-hundred justify-content-center ">
         <img className="img-size" src={bottom} alt="bottom bun" />
       </div>
