@@ -1,0 +1,15 @@
+.btn-cancel{
+  color: #944317;
+}
+
+.btn-continue{
+  color: #5c9210;
+}
+
+.btn-cancel, .btn-continue{
+  border: none;
+  background-color: white;
+  padding: .5rem;
+  margin: .4rem;
+  font-weight: 700;
+}

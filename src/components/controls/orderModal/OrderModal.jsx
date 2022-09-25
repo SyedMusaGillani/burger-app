@@ -2,6 +2,8 @@ import Modal from "react-bootstrap/Modal";
 
 import { foodItemsRate } from "../../helpers/helper";
 
+import "./orderModal.css";
+
 export default function OrderModal({ show, foodPrice, price, hide }) {
   const quantities = Object.entries(foodPrice).map(([key, val]) => (
     <li>
@@ -15,11 +17,9 @@ export default function OrderModal({ show, foodPrice, price, hide }) {
         <ul>{quantities}</ul>
         <strong>Total Price: ${price}</strong>
         <p>Continue to Checkout?</p>
+        <button className="btn-cancel">Cancel</button>
+        <button className="btn-continue">Continue</button>
       </Modal.Body>
-      <Modal.Footer>
-        <button>Cancel</button>
-        <button>Continue</button>
-      </Modal.Footer>
     </Modal>
   );
 }
