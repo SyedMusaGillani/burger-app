@@ -26,10 +26,10 @@ function Control() {
 
   return (
     <>
-      <BurgerBody {...foodPrice} price={price} />
+      <BurgerBody foodPrice={foodPrice} price={price} />
       <div className="container-fluid bg-controls p-0 m-0 text-center">
         Current Price:
-        <strong>${price}</strong>
+        <strong>${price.toFixed(2)}</strong>
         {ingredients}
         <br />
         <button className="justify-content-center btn-order">ORDER</button>
