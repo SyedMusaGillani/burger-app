@@ -1,7 +1,6 @@
 import { useState } from "react";
 
-import { IngredientControl } from "../../components";
-import { BurgerBody } from "../../components";
+import { IngredientControl, BurgerBody } from "../../components";
 
 import "./control.css";
 
