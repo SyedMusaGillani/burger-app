@@ -11,14 +11,18 @@ export default function OrderModal({ show, foodPrice, price, hide }) {
     </li>
   ));
   return (
-    <Modal show={show} onEscapeKeyDown={hide}>
+    <Modal show={show} onHide={hide}>
       <Modal.Body>
         <h3>Your Order Summary</h3>
         <ul>{quantities}</ul>
         <strong>Total Price: ${price}</strong>
         <p>Continue to Checkout?</p>
-        <button className="btn-cancel">Cancel</button>
-        <button className="btn-continue">Continue</button>
+        <button className="btn-cancel" onClick={hide}>
+          Cancel
+        </button>
+        <button className="btn-continue" onClick={hide}>
+          Continue
+        </button>
       </Modal.Body>
     </Modal>
   );
