@@ -11,10 +11,6 @@ function Control() {
     meat: 0,
     cheese: 0,
   });
-  const [show, setShow] = useState(false);
-
-  const showModal = () => setShow(true);
-  const hideModal = () => setShow(false);
 
   const ingredients = Object.keys(foodPrice).map((label, i) => (
     <IngredientControl
@@ -35,20 +31,8 @@ function Control() {
         <strong>${price}</strong>
         {ingredients}
         <br />
-        <button
-          className="justify-content-center btn-order"
-          onClick={showModal}
-          disabled={price === 3}
-        >
-          ORDER
-        </button>
+        <OrderModal foodPrice={foodPrice} price={price} />
       </div>
-      <OrderModal
-        foodPrice={foodPrice}
-        show={show}
-        price={price}
-        hide={hideModal}
-      />
     </>
   );
 }
