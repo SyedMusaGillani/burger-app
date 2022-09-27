@@ -1,0 +1,22 @@
+.btn-order {
+  background-color: #dad735;
+  width: 40%;
+  margin-bottom: 20px;
+}
+
+.btn-cancel {
+  color: #944317;
+}
+
+.btn-continue {
+  color: #5c9210;
+}
+
+.btn-cancel,
+.btn-continue {
+  border: none;
+  background-color: white;
+  padding: 0.5rem;
+  margin: 0.4rem;
+  font-weight: 700;
+}

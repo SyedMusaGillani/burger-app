@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { IngredientControl, BurgerBody } from "../../components";
+import { IngredientControl, BurgerBody, OrderModal } from "../../components";
 
 import "./control.css";
 
@@ -31,7 +31,7 @@ function Control() {
         <strong>${price.toFixed(2)}</strong>
         {ingredients}
         <br />
-        <button className="justify-content-center btn-order">ORDER</button>
+        <OrderModal foodPrice={foodPrice} price={price} />
       </div>
     </>
   );
