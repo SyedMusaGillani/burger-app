@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import _ from "lodash";
 
 import { top, bottom } from "../../../assets";
@@ -30,3 +31,8 @@ export default function BurgerBody({ foodPrice, price }) {
     </div>
   );
 }
+
+BurgerBody.propTypes = {
+  foodPrice: PropTypes.object,
+  price: PropTypes.number,
+};

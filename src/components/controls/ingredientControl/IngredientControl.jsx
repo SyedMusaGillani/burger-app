@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import {
   foodItemsRate,
   increasePrice,
@@ -27,3 +29,9 @@ export default function IngredientControl({ label, foodPrice, setFoodPrice }) {
     </div>
   );
 }
+
+IngredientControl.propTypes = {
+  label: PropTypes.string.isRequired,
+  foodPrice: PropTypes.object,
+  setFoodPrice: PropTypes.func,
+};

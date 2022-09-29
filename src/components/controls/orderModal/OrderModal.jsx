@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import Modal from "react-bootstrap/Modal";
 
 import "./orderModal.css";
@@ -10,7 +11,7 @@ export default function OrderModal({ foodPrice, price }) {
   const hideModal = () => setShow(false);
 
   const quantities = Object.entries(foodPrice).map(([key, val]) => (
-    <li>
+    <li key={key}>
       {key}: $ {val.toFixed(2)}
     </li>
   ));
@@ -40,3 +41,8 @@ export default function OrderModal({ foodPrice, price }) {
     </>
   );
 }
+
+OrderModal.propTypes = {
+  foodPrice: PropTypes.object,
+  price: PropTypes.number,
+};
