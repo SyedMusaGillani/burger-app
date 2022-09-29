@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { IngredientControl, BurgerBody, OrderModal } from "../../components";
 
-import "./control.css";
+import "./burgerControl.css";
 
 export default function BurgerControl() {
   const [foodPrice, setFoodPrice] = useState({
