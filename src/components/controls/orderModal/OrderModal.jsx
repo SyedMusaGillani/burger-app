@@ -32,12 +32,14 @@ export default function OrderModal({ foodPrice, price }) {
           <ul>{quantities}</ul>
           <strong>Total Price: ${price.toFixed(2)}</strong>
           <p>Continue to Checkout?</p>
-          <button className="btn-cancel" onClick={hideModal}>
-            Cancel
-          </button>
-          <button className="btn-continue" onClick={hideModal}>
-            Continue
-          </button>
+          <div className="row justify-content-end">
+            <button className="btn-cancel col-2 " onClick={hideModal}>
+              Cancel
+            </button>
+            <button className="btn-continue col-2 " onClick={hideModal}>
+              Continue
+            </button>
+          </div>
         </Modal.Body>
       </Modal>
     </>
