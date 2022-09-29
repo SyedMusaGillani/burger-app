@@ -1,8 +1,6 @@
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 
-import { foodItemsRate } from "../../helpers/helper";
-
 import "./orderModal.css";
 
 export default function OrderModal({ foodPrice, price }) {
@@ -13,7 +11,7 @@ export default function OrderModal({ foodPrice, price }) {
 
   const quantities = Object.entries(foodPrice).map(([key, val]) => (
     <li>
-      {key}: $ {val / foodItemsRate[key]}
+      {key}: $ {val.toFixed(2)}
     </li>
   ));
   return (
