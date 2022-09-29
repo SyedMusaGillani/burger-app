@@ -26,7 +26,7 @@ export default function OrderModal({ foodPrice, price }) {
       >
         ORDER
       </button>
-      <Modal show={show} onHide={hideModal}>
+      <Modal show={show} onHide={hideModal} centered>
         <Modal.Body>
           <h3>Your Order Summary</h3>
           <ul>{quantities}</ul>
