@@ -30,7 +30,7 @@ export default function BurgerControl() {
   return (
     <>
       <BurgerBody foodPrice={foodPrice} price={price} />
-      <div className="container-fluid bg-controls p-0 m-0 text-center">
+      <div className="container-fluid bg-controls p-0 m-0 text-center position-absolute bottom-0 control-height">
         Current Price:
         <strong>${price.toFixed(2)}</strong>
         {ingredients}

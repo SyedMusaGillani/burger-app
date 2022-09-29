@@ -3,7 +3,7 @@ import "./nav.css";
 
 function Nav() {
   return (
-    <nav className="navbar navbar-expand-sm bg-color navbar-dark container-fluid">
+    <nav className="navbar navbar-expand-sm bg-color navbar-dark container-fluid nav-height m-0">
       <button
         className="navbar-toggler"
         type="button"

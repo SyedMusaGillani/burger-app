@@ -6,8 +6,6 @@
   width: 100%;
 }
 
-
-
-.outline{
-  border: 3px dotted blue;
+.controls-height {
+  height: 45vh;
 }

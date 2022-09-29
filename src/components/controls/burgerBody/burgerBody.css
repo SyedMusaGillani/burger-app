@@ -12,5 +12,6 @@
 }
 
 .overflow{
+  height: 58vh;
   overflow: auto;
 }

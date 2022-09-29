@@ -18,7 +18,7 @@ export default function BurgerBody({ foodPrice, price }) {
       ));
   });
   return (
-    <div className="container-fluid my-2 overflow">
+    <div className="container-fluid overflow">
       <div className="row width-hundred justify-content-center ">
         <img className="img-size" src={top} alt="top bun" />
       </div>
