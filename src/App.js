@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { Nav, Controls } from "./components";
+import { Nav, BurgerControls } from "./components";
 
 import "./App.css";
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Nav />
-      <Controls />
+      <BurgerControls />
     </>
   );
 }

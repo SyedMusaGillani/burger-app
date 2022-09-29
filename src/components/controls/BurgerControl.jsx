@@ -4,7 +4,7 @@ import { IngredientControl, BurgerBody, OrderModal } from "../../components";
 
 import "./control.css";
 
-function Control() {
+export default function BurgerControl() {
   const [foodPrice, setFoodPrice] = useState({
     lettuce: 0,
     bacon: 0,
@@ -36,5 +36,3 @@ function Control() {
     </>
   );
 }
-
-export default Control;
