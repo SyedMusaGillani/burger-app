@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import _ from "lodash";
 
 import { top, bottom } from "../../../assets";
 
@@ -8,6 +7,16 @@ import { foodItemsRate, itemImages } from "../../helpers/helper";
 import "./burgerBody.css";
 
 export default function BurgerBody({ foodPrice, price }) {
+  const images = Object.entries(itemImages).map(([key, img]) => {
+    const length = Math.round(foodPrice[key] / foodItemsRate[key]);
+    return Array(length)
+      .fill()
+      .map((_, i) => (
+        <div className="row width-hundred justify-content-center" key={i}>
+          <img className="img-size" src={img} alt="ing" />
+        </div>
+      ));
+  });
   return (
     <div className="container-fluid my-2 overflow">
       <div className="row width-hundred justify-content-center ">
@@ -16,14 +25,7 @@ export default function BurgerBody({ foodPrice, price }) {
       {price === 3 ? (
         <h1 className="text-center">No Ingredients Added</h1>
       ) : (
-        itemImages.map((obj) => {
-          const [key, val] = Object.entries(obj)[0];
-          return _.times(foodPrice[key] / foodItemsRate[key], () => (
-            <div className="row width-hundred justify-content-center ">
-              <img className="img-size" src={val} alt="ing" />
-            </div>
-          ));
-        })
+        images
       )}
       <div className="row width-hundred justify-content-center ">
         <img className="img-size" src={bottom} alt="bottom bun" />
