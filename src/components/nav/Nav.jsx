@@ -15,7 +15,7 @@ function Nav() {
       >
         <span className="navbar-toggler-icon white"></span>
       </button>
-      <a className="navbar-brand" href="#goes-to-nothing">
+      <a className="navbar-brand mx-1" href="#goes-to-nothing">
         <img src={logo} alt="Burger-logo" width="30" height="24" />
       </a>
       <div
