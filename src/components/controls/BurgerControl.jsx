@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { IngredientControl, BurgerBody, OrderModal } from "../../components";
+import { initialPrice } from "../helpers/helper";
 
 import "./burgerControl.css";
 
@@ -21,7 +22,10 @@ export default function BurgerControl() {
     />
   ));
 
-  const price = Object.values(foodPrice).reduce((prev, curr) => prev + curr, 3);
+  const price = Object.values(foodPrice).reduce(
+    (prev, curr) => prev + curr,
+    initialPrice
+  );
 
   return (
     <>

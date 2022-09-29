@@ -2,6 +2,8 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import Modal from "react-bootstrap/Modal";
 
+import { initialPrice } from "../../helpers/helper";
+
 import "./orderModal.css";
 
 export default function OrderModal({ foodPrice, price }) {
@@ -20,7 +22,7 @@ export default function OrderModal({ foodPrice, price }) {
       <button
         className="justify-content-center btn-order"
         onClick={showModal}
-        disabled={price === 3}
+        disabled={price === initialPrice}
       >
         ORDER
       </button>

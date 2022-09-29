@@ -1,5 +1,7 @@
 import { cheeseImg, baconImg, meatImg, lettuceImg } from "../../assets";
 
+export const initialPrice = 3;
+
 export const foodItemsRate = {
   lettuce: 0.5,
   bacon: 0.7,
