@@ -17,7 +17,7 @@ export default function IngredientControl({ label, foodPrice, setFoodPrice }) {
       <button
         className="col-2 btn-less"
         onClick={onLess}
-        disabled={foodPrice[label] === 0}
+        disabled={foodPrice[label] < foodItemsRate[label]}
       >
         Less
       </button>
