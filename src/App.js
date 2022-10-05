@@ -1,6 +1,7 @@
+import { Outlet } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { Nav, BurgerControls } from "./components";
+import { Nav } from "./components";
 
 import "./App.css";
 
@@ -8,7 +9,7 @@ function App() {
   return (
     <>
       <Nav />
-      <BurgerControls />
+      <Outlet />
     </>
   );
 }
