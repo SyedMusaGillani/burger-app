@@ -34,10 +34,13 @@ export default function Login() {
     resolver: yupResolver(schema),
   });
 
-  // TODO remove this print statement
   const onSubmit = (data) => {
-    console.log(data);
-    navigate("/dash");
+    const { password } = data;
+    if (password === "123456") {
+      navigate("/dash");
+    } else {
+      alert("Wrong password");
+    }
   };
 
   useEffect(() => {
