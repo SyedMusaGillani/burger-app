@@ -2,14 +2,13 @@ import PropTypes from "prop-types";
 
 import { top, bottom } from "../../../assets";
 
-import { foodItemsRate, itemImages } from "../../helpers/helper";
+import { itemImages, initialPrice } from "../../helpers/helper";
 
 import "./burgerBody.css";
 
-export default function BurgerBody({ foodPrice, price }) {
+export default function BurgerBody({ itemsQuantities, price }) {
   const images = Object.entries(itemImages).map(([key, img]) => {
-    const length = Math.round(foodPrice[key] / foodItemsRate[key]);
-    return Array(length)
+    return Array(itemsQuantities[key])
       .fill()
       .map((_, i) => (
         <div className="row width-hundred justify-content-center" key={i}>
@@ -22,7 +21,7 @@ export default function BurgerBody({ foodPrice, price }) {
       <div className="row width-hundred justify-content-center ">
         <img className="img-size" src={top} alt="top bun" />
       </div>
-      {price === 3 ? (
+      {price === initialPrice ? (
         <h1 className="text-center">No Ingredients Added</h1>
       ) : (
         images
@@ -35,6 +34,6 @@ export default function BurgerBody({ foodPrice, price }) {
 }
 
 BurgerBody.propTypes = {
-  foodPrice: PropTypes.object,
+  itemsQuantities: PropTypes.object,
   price: PropTypes.number,
 };

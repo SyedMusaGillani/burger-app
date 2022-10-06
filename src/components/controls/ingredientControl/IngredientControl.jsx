@@ -1,25 +1,24 @@
 import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
+import * as orderActions from "../../../actions/orderActionsCreator";
 
-import {
-  foodItemsRate,
-  increasePrice,
-  reducePrice,
-} from "../../helpers/helper";
+import { actionName } from "../../helpers/helper";
 
 import "./ingredientControl.css";
 
-export default function IngredientControl({ label, foodPrice, setFoodPrice }) {
-  const onLess = () =>
-    reducePrice(label, foodItemsRate[label], foodPrice, setFoodPrice);
-  const onMore = () =>
-    increasePrice(label, foodItemsRate[label], foodPrice, setFoodPrice);
+export default function IngredientControl({ label, itemsQuantities }) {
+  const dispatch = useDispatch();
+  const onLess = () => dispatch(orderActions[`subtract${actionName(label)}`]());
+
+  const onMore = () => dispatch(orderActions[`add${actionName(label)}`]());
+
   return (
     <div className="row m-0 justify-content-evenly px-5 my-2">
       <p className="col-2 fw-bold">{label}</p>
       <button
         className="col-2 btn-less"
         onClick={onLess}
-        disabled={foodPrice[label] < foodItemsRate[label]}
+        disabled={itemsQuantities[label] === 0}
       >
         Less
       </button>
@@ -31,7 +30,6 @@ export default function IngredientControl({ label, foodPrice, setFoodPrice }) {
 }
 
 IngredientControl.propTypes = {
-  label: PropTypes.string.isRequired,
-  foodPrice: PropTypes.object,
-  setFoodPrice: PropTypes.func,
+  label: PropTypes.string,
+  itemsQuantities: PropTypes.object,
 };

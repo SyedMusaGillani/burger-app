@@ -1,40 +1,36 @@
-import { useState } from "react";
+import { useSelector } from "react-redux";
 
 import { IngredientControl, BurgerBody, OrderModal } from "../../components";
-import { initialPrice } from "../helpers/helper";
+import { initialPrice, foodItemsRate } from "../helpers/helper";
 
 import "./burgerControl.css";
 
 export default function BurgerControl() {
-  const [foodPrice, setFoodPrice] = useState({
-    lettuce: 0,
-    bacon: 0,
-    meat: 0,
-    cheese: 0,
-  });
+  console.log();
 
-  const ingredients = Object.keys(foodPrice).map((label, i) => (
+  const itemsQuantities = useSelector((state) => state.order);
+
+  const ingredients = Object.keys(itemsQuantities).map((label, i) => (
     <IngredientControl
       label={label}
-      foodPrice={foodPrice}
-      setFoodPrice={setFoodPrice}
+      itemsQuantities={itemsQuantities}
       key={i}
     />
   ));
 
-  const price = Object.values(foodPrice).reduce(
-    (prev, curr) => prev + curr,
+  const price = Object.entries(itemsQuantities).reduce(
+    (prev, [itemName, qty]) => prev + qty * foodItemsRate[itemName],
     initialPrice
   );
 
   return (
     <>
-      <BurgerBody foodPrice={foodPrice} price={price} />
+      <BurgerBody itemsQuantities={itemsQuantities} price={price} />
       <div className="container-fluid bg-controls p-0 m-0 text-center position-absolute bottom-0 py-3 ">
         Current Price:
         <strong>${price.toFixed(2)}</strong>
         {ingredients}
-        <OrderModal foodPrice={foodPrice} price={price} />
+        <OrderModal itemsQuantities={itemsQuantities} price={price} />
       </div>
     </>
   );

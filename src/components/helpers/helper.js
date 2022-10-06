@@ -16,23 +16,5 @@ export const itemImages = {
   meat: meatImg,
 };
 
-export const reducePrice = (label, priceRate, foodPrice, setFoodPrice) => {
-  if (foodPrice[label] > 0)
-    setFoodPrice((prevState) => {
-      return {
-        ...prevState,
-        [label]: parseFloat(
-          (
-            parseFloat(foodPrice[label].toFixed(2)) -
-            parseFloat(priceRate.toFixed(2))
-          ).toFixed(2)
-        ),
-      };
-    });
-};
-
-export const increasePrice = (label, priceRate, foodPrice, setFoodPrice) => {
-  setFoodPrice((prevState) => {
-    return { ...prevState, [label]: foodPrice[label] + priceRate };
-  });
-};
+export const actionName = (label) =>
+  label.charAt(0).toUpperCase() + label.slice(1);
