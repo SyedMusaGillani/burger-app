@@ -1,0 +1,27 @@
+.max-w{
+  max-width: 500px;
+}
+
+.min-h{
+  min-height: 90vh;
+}
+
+.button{
+  background-color: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 10px;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.btn-submit{
+  color: #5c9210;
+}
+
+.btn-toggle{
+  color: #944317;
+}

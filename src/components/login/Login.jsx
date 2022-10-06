@@ -2,7 +2,9 @@ import { useEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { Form, Button } from "react-bootstrap";
+import { Form, Container, Card } from "react-bootstrap";
+
+import "./login.css";
 
 export default function Login() {
   const schema = yup
@@ -42,50 +44,63 @@ export default function Login() {
   }, [isSubmitSuccessful]);
 
   return (
-    <Form validated={false} onSubmit={handleSubmit(onSubmit)}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Controller
-          control={control}
-          name="email"
-          render={({ field: { onChange, ref, value } }) => (
-            <Form.Control
-              placeholder="Enter email"
-              onChange={onChange}
-              ref={ref}
-              isInvalid={errors.email}
-              value={value}
-            />
-          )}
-        />
-        <Form.Control.Feedback type="invalid">
-          {errors.email?.message}
-        </Form.Control.Feedback>
-      </Form.Group>
+    <Container className="d-flex justify-content-center align-items-center min-h ">
+      <div className="w-100 max-w">
+        <Card>
+          <Card.Body>
+            <h2 className="text-center my-4">Sign Up</h2>
+            <Form validated={false} onSubmit={handleSubmit(onSubmit)}>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Controller
+                  control={control}
+                  name="email"
+                  render={({ field: { onChange, ref, value } }) => (
+                    <Form.Control
+                      placeholder="Enter email"
+                      onChange={onChange}
+                      ref={ref}
+                      isInvalid={errors.email}
+                      value={value}
+                    />
+                  )}
+                />
+                <Form.Control.Feedback type="invalid">
+                  {errors.email?.message}
+                </Form.Control.Feedback>
+              </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Controller
-          control={control}
-          name="password"
-          render={({ field: { onChange, ref, value } }) => (
-            <Form.Control
-              type="password"
-              placeholder="Password"
-              onChange={onChange}
-              ref={ref}
-              isInvalid={errors.password}
-              value={value}
-            />
-          )}
-        />
-        <Form.Control.Feedback type="invalid">
-          {errors.password?.message}
-        </Form.Control.Feedback>
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Controller
+                  control={control}
+                  name="password"
+                  render={({ field: { onChange, ref, value } }) => (
+                    <Form.Control
+                      type="password"
+                      placeholder="Password"
+                      onChange={onChange}
+                      ref={ref}
+                      isInvalid={errors.password}
+                      value={value}
+                    />
+                  )}
+                />
+                <Form.Control.Feedback type="invalid">
+                  {errors.password?.message}
+                </Form.Control.Feedback>
+              </Form.Group>
+              <button
+                className="w-100 btn-submit button text-center"
+                type="submit"
+              >
+                Submit
+              </button>
+              <button className="w-100 btn-toggle button" type="submit">
+                Toggle
+              </button>
+            </Form>
+          </Card.Body>
+        </Card>
+      </div>
+    </Container>
   );
 }
