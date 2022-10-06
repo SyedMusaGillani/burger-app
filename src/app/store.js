@@ -3,6 +3,6 @@ import orderReducer from "../reducers/orderReducer";
 
 export default configureStore({
   reducer: {
-    orderReducer,
+    order: orderReducer,
   },
 });
