@@ -1,16 +1,20 @@
+import { Provider } from "react-redux";
 import { Outlet } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import store from "./app/store";
 import { Nav } from "./components";
 
 import "./App.css";
 
 function App() {
   return (
-    <>
-      <Nav />
-      <Outlet />
-    </>
+    <Provider store={store}>
+      <>
+        <Nav />
+        <Outlet />
+      </>
+    </Provider>
   );
 }
 
