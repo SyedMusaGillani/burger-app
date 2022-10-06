@@ -14,3 +14,7 @@
   border: .2rem solid white;
   padding: 0;
 }
+
+.active {
+  border-bottom: 2vh solid #40A4C8;
+}

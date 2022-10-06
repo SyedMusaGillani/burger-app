@@ -1,4 +1,6 @@
-import logo from "../../assets/burger-logo.b8503d26.png";
+import { NavLink } from "react-router-dom";
+
+import { logo } from "../../assets";
 import "./nav.css";
 
 function Nav() {
@@ -22,16 +24,23 @@ function Nav() {
         className="collapse navbar-collapse navbar-nav "
         id="navbarSupportedContent"
       >
-        <a
-          className="nav-link white ms-auto"
+        <NavLink
+          to="dash"
+          className={({ isActive }) =>
+            `nav-link white ms-auto ${isActive ? "active" : ""}`
+          }
           aria-current="page"
-          href="#Burger"
         >
           Burger Builder
-        </a>
-        <a className="nav-link white" href="#Login">
+        </NavLink>
+        <NavLink
+          to="login"
+          className={({ isActive }) =>
+            `nav-link white ${isActive ? "active" : ""}`
+          }
+        >
           Login
-        </a>
+        </NavLink>
       </div>
     </nav>
   );
