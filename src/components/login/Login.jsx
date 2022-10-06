@@ -1,12 +1,15 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
+import { Form, Container, Card } from "react-bootstrap";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { Form, Container, Card } from "react-bootstrap";
 
 import "./login.css";
 
 export default function Login() {
+  const navigate = useNavigate();
+
   const schema = yup
     .object({
       email: yup.string().email().required("Please enter a valid Email!"),
@@ -34,6 +37,7 @@ export default function Login() {
   // TODO remove this print statement
   const onSubmit = (data) => {
     console.log(data);
+    navigate("/dash");
   };
 
   useEffect(() => {
@@ -94,7 +98,7 @@ export default function Login() {
               >
                 Submit
               </button>
-              <button className="w-100 btn-toggle button" type="submit">
+              <button className="w-100 btn-toggle button" type="button">
                 Toggle
               </button>
             </Form>
