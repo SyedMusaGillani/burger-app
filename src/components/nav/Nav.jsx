@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 import { logo } from "../../assets";
 import "./nav.css";
@@ -17,10 +17,13 @@ function Nav() {
       >
         <span className="navbar-toggler-icon white"></span>
       </button>
-      <a className="navbar-brand mx-1" href="#goes-to-nothing">
+      <Link to="dash" className="navbar-brand mx-1">
         <img src={logo} alt="Burger-logo" width="30" height="24" />
-      </a>
-      <div className="collapse navbar-collapse navbar-nav " id="navbarSupportedContent">
+      </Link>
+      <div
+        className="collapse navbar-collapse navbar-nav "
+        id="navbarSupportedContent"
+      >
         <NavLink
           to="dash"
           className={({ isActive }) =>
