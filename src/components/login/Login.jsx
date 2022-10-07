@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
 import { Form, Container, Card } from "react-bootstrap";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
@@ -9,6 +11,11 @@ import "./login.css";
 
 export default function Login() {
   const navigate = useNavigate();
+
+  const notifyError = () =>
+    toast("Wrong password", {
+      position: toast.POSITION.TOP_CENTER,
+    });
 
   const schema = yup
     .object({
@@ -39,7 +46,7 @@ export default function Login() {
     if (password === "123456") {
       navigate("/dashboard");
     } else {
-      alert("Wrong password");
+      notifyError();
     }
   };
 
@@ -108,6 +115,7 @@ export default function Login() {
           </Card.Body>
         </Card>
       </div>
+      <ToastContainer />;
     </Container>
   );
 }
