@@ -20,10 +20,7 @@ function Nav() {
       <a className="navbar-brand mx-1" href="#goes-to-nothing">
         <img src={logo} alt="Burger-logo" width="30" height="24" />
       </a>
-      <div
-        className="collapse navbar-collapse navbar-nav "
-        id="navbarSupportedContent"
-      >
+      <div className="collapse navbar-collapse navbar-nav " id="navbarSupportedContent">
         <NavLink
           to="dash"
           className={({ isActive }) =>

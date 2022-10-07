@@ -6,8 +6,6 @@ import { initialPrice, foodItemsRate } from "../helpers/helper";
 import "./burgerControl.css";
 
 export default function BurgerControl() {
-  console.log();
-
   const itemsQuantities = useSelector((state) => state.order);
 
   const ingredients = Object.keys(itemsQuantities).map((label, i) => (
