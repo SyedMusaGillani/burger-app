@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
-import * as orderActions from "../../../actions/orderActionsCreator";
+import * as orderActions from "../../../redux/actions/orderActionsCreator";
 
 import { actionName } from "../../helpers/helper";
 
