@@ -37,7 +37,7 @@ export default function Login() {
   const onSubmit = (data) => {
     const { password } = data;
     if (password === "123456") {
-      navigate("/dash");
+      navigate("/dashboard");
     } else {
       alert("Wrong password");
     }

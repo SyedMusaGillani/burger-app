@@ -17,7 +17,7 @@ function Nav() {
       >
         <span className="navbar-toggler-icon white"></span>
       </button>
-      <Link to="dash" className="navbar-brand mx-1">
+      <Link to="dashboard" className="navbar-brand mx-1">
         <img src={logo} alt="Burger-logo" width="30" height="24" />
       </Link>
       <div
@@ -25,7 +25,7 @@ function Nav() {
         id="navbarSupportedContent"
       >
         <NavLink
-          to="dash"
+          to="dashboard"
           className={({ isActive }) =>
             `nav-link white ms-auto ${isActive ? "active" : ""}`
           }

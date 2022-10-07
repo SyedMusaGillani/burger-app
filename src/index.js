@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "dash",
+        path: "dashboard",
         element: <BurgerControls />,
       },
       {
