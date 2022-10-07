@@ -6,11 +6,23 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "headers": [
+      {"source": "/service-worker.js", "headers": [{"key": "Cache-Control", "value": "no-cache"}]}
+    ],
     "rewrites": [
       {
         "source": "**",
         "destination": "/index.html"
       }
     ]
+  },
+  "emulators": {
+    "hosting": {
+      "port": 5000
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true
   }
 }
