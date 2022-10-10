@@ -115,7 +115,7 @@ export default function Login() {
           </Card.Body>
         </Card>
       </div>
-      <ToastContainer />;
+      <ToastContainer />
     </Container>
   );
 }
